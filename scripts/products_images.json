@@ -1,0 +1,278 @@
+[
+  {
+    "id": "013380ac-e932-49fa-9562-de8761a55067",
+    "name": "Wheat",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/013380ac-e932-49fa-9562-de8761a55067/main/1787938521890-ccolse.png",
+    "gallery_images": []
+  },
+  {
+    "id": "1f890f6c-4b68-48bc-895b-9cc8a94be0de",
+    "name": "Yellow Corn (Maize)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/1f890f6c-4b68-48bc-895b-9cc8a94be0de/main/1787938812244-qvh1dy.png",
+    "gallery_images": []
+  },
+  {
+    "id": "ca954314-3b0d-4e16-b73e-fafdb7d1f21f",
+    "name": "Mustard seed",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/ca954314-3b0d-4e16-b73e-fafdb7d1f21f/main/1787939464333-u6k704.png",
+    "gallery_images": []
+  },
+  {
+    "id": "b58bb3b4-e0ec-42c3-a0b8-63f8fa7dc150",
+    "name": "Rice",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/b58bb3b4-e0ec-42c3-a0b8-63f8fa7dc150/main/1787937812510-qg3m22.png",
+    "gallery_images": []
+  },
+  {
+    "id": "3600c624-38a1-49aa-b335-f22552195c14",
+    "name": "Millet",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/3600c624-38a1-49aa-b335-f22552195c14/main/1787939043419-x46hit.png",
+    "gallery_images": []
+  },
+  {
+    "id": "b7730eaa-9732-4890-ae21-35c73c1af12d",
+    "name": "Barley",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/b7730eaa-9732-4890-ae21-35c73c1af12d/main/1787939796917-5e4d27.png",
+    "gallery_images": []
+  },
+  {
+    "id": "46172dee-e815-424f-ba49-253a9a07ea05",
+    "name": "Oats",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/46172dee-e815-424f-ba49-253a9a07ea05/main/1787940009418-vyr1uj.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9d26c975-5952-4eaa-8763-9bbf16285ab2",
+    "name": "Grain Sorghum",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9d26c975-5952-4eaa-8763-9bbf16285ab2/main/1787940242821-ry07eb.png",
+    "gallery_images": []
+  },
+  {
+    "id": "d77c4a00-4b3a-4a57-96b8-48128f3dbc8a",
+    "name": "Red Chilli Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/d77c4a00-4b3a-4a57-96b8-48128f3dbc8a/main/1788723392374-b4ky0u.png",
+    "gallery_images": []
+  },
+  {
+    "id": "ac9a27a8-098c-438f-8616-d43d5710a6ec",
+    "name": "Coriander Powder (Dhana)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/ac9a27a8-098c-438f-8616-d43d5710a6ec/main/1788758066691-ravi2p.png",
+    "gallery_images": []
+  },
+  {
+    "id": "027866d8-b815-4e38-95a4-4c054bb9523d",
+    "name": "Turmeric Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/027866d8-b815-4e38-95a4-4c054bb9523d/main/1788722745772-zs2l7w.png",
+    "gallery_images": []
+  },
+  {
+    "id": "b984dee2-9538-4eca-a21e-c3eeae99f170",
+    "name": "Fennel Powder (Saunf)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/b984dee2-9538-4eca-a21e-c3eeae99f170/main/1788760249472-8kan0h.png",
+    "gallery_images": []
+  },
+  {
+    "id": "7a13c9bd-691a-4a61-baa4-6d3c08a34dc5",
+    "name": "Pure Saffron Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/7a13c9bd-691a-4a61-baa4-6d3c08a34dc5/main/1788762059090-53rnje.png",
+    "gallery_images": []
+  },
+  {
+    "id": "dcfcdf7c-ef66-4ca1-9bea-444139b13661",
+    "name": "Natural Vanilla Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/dcfcdf7c-ef66-4ca1-9bea-444139b13661/main/1788762349185-we5bdi.png",
+    "gallery_images": []
+  },
+  {
+    "id": "ec2accd6-966d-42cc-b247-44c924925c96",
+    "name": "Green Cardamom Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/ec2accd6-966d-42cc-b247-44c924925c96/main/1788763360579-uc84rj.png",
+    "gallery_images": []
+  },
+  {
+    "id": "fd3cac5a-3399-4236-a19f-95fef0b8599d",
+    "name": "Cinnamon Powder (Dalchini)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/fd3cac5a-3399-4236-a19f-95fef0b8599d/main/1788763591407-kglkjl.png",
+    "gallery_images": []
+  },
+  {
+    "id": "88023bbf-e3ee-477f-9427-2019b5535bca",
+    "name": "Clove Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/88023bbf-e3ee-477f-9427-2019b5535bca/main/1788764316087-awt3lj.png",
+    "gallery_images": []
+  },
+  {
+    "id": "4af646e5-abee-4bed-9cb0-fb67ec95f348",
+    "name": "Dry Ginger Powder (Sonth)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/4af646e5-abee-4bed-9cb0-fb67ec95f348/main/1788760926329-ezltzu.png",
+    "gallery_images": []
+  },
+  {
+    "id": "00550138-cd43-48f3-b04f-1a7a3131ac95",
+    "name": "Cumin Powder (Jeera)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/00550138-cd43-48f3-b04f-1a7a3131ac95/main/1788758347335-l1uhca.png",
+    "gallery_images": []
+  },
+  {
+    "id": "42b5ff4b-986d-4eb5-850f-f62f92d1b3f0",
+    "name": "Nutmeg Powder",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/42b5ff4b-986d-4eb5-850f-f62f92d1b3f0/main/1788761607495-u33tok.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9b36f5a9-ebd4-44df-b6cb-0f1c8db26922",
+    "name": "Black Cardamom (Badi Elaichi)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9b36f5a9-ebd4-44df-b6cb-0f1c8db26922/main/1788773898555-6yme5c.png",
+    "gallery_images": []
+  },
+  {
+    "id": "72738acb-e38c-4057-8b95-84ca8cbca54f",
+    "name": "Black Peppercorns (Tellicherry / MG1)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/72738acb-e38c-4057-8b95-84ca8cbca54f/main/1788774006285-02lm2h.png",
+    "gallery_images": []
+  },
+  {
+    "id": "fb0b285a-7c6e-4b3c-987d-89ca8431adb9",
+    "name": "Byadgi Chilli Whole (Deep Red ASTA)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/fb0b285a-7c6e-4b3c-987d-89ca8431adb9/main/1788774161158-qpfmc7.png",
+    "gallery_images": []
+  },
+  {
+    "id": "05883ba6-2765-4761-8170-dceddeda238c",
+    "name": "Cinnamon Sticks & Quills (Dalchini)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/05883ba6-2765-4761-8170-dceddeda238c/main/1788774389267-zz0703.png",
+    "gallery_images": []
+  },
+  {
+    "id": "898e8658-9462-419d-99f8-9c53f7976c82",
+    "name": "Dry Ginger Whole (Cochin Grade)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/898e8658-9462-419d-99f8-9c53f7976c82/main/1788774777319-jdn0xw.png",
+    "gallery_images": []
+  },
+  {
+    "id": "441b8d60-a736-42cb-b038-74141b5d2354",
+    "name": "Dry Red Chilli Whole (Stemless / With Stem)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/441b8d60-a736-42cb-b038-74141b5d2354/main/1788775106043-2otca0.png",
+    "gallery_images": []
+  },
+  {
+    "id": "cc7be0bf-3721-45c2-9adf-265bad311266",
+    "name": "Green Cardamom (8mm Extra Bold)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/cc7be0bf-3721-45c2-9adf-265bad311266/main/1788775693535-poc4ar.png",
+    "gallery_images": []
+  },
+  {
+    "id": "0c103bea-48bd-4aa2-8357-5d197b5e18e8",
+    "name": "Green Peppercorns (Dehydrated / Brine)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/0c103bea-48bd-4aa2-8357-5d197b5e18e8/main/1788775799243-2xsqby.png",
+    "gallery_images": []
+  },
+  {
+    "id": "883cf154-9eff-4e46-ad51-0bbe98315288",
+    "name": "Guntur S17 / Teja Red Chilli",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/883cf154-9eff-4e46-ad51-0bbe98315288/main/1788781007797-cbbv1x.png",
+    "gallery_images": []
+  },
+  {
+    "id": "efbcca5d-056f-448e-a571-36a5d84057be",
+    "name": "Kashmiri Red Chilli Whole",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/efbcca5d-056f-448e-a571-36a5d84057be/main/1788781136079-6nmtgg.png",
+    "gallery_images": []
+  },
+  {
+    "id": "af45516d-fa37-4d7b-a00a-7e51101ae3f2",
+    "name": "Mace Whole Blades (Javitri)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/af45516d-fa37-4d7b-a00a-7e51101ae3f2/main/1788781310968-9fvs1b.png",
+    "gallery_images": []
+  },
+  {
+    "id": "f8b1f7fb-da3a-45ae-9de7-ff08077da33d",
+    "name": "Nutmeg Whole (Shell / Shell-less)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/f8b1f7fb-da3a-45ae-9de7-ff08077da33d/main/1788781460915-zesw3j.png",
+    "gallery_images": []
+  },
+  {
+    "id": "4f77949c-cb3a-4990-86f6-3fa8d3444bb8",
+    "name": "Turmeric Bulbs Whole",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/4f77949c-cb3a-4990-86f6-3fa8d3444bb8/main/1788781676843-4r80ui.png",
+    "gallery_images": []
+  },
+  {
+    "id": "61c7b7e8-52a4-4ab1-950c-2e3256ebb164",
+    "name": "Turmeric Fingers (Erode / Nizamabad)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/61c7b7e8-52a4-4ab1-950c-2e3256ebb164/main/1788781893252-on5t4j.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9c7d4df9-ab82-4570-b8c4-fa97c70367fe",
+    "name": "White Peppercorns Whole",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9c7d4df9-ab82-4570-b8c4-fa97c70367fe/main/1788782036850-19zdus.png",
+    "gallery_images": []
+  },
+  {
+    "id": "74802881-d6aa-421d-a88b-6a0beb6bb826",
+    "name": "Whole Cloves (Laung)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/74802881-d6aa-421d-a88b-6a0beb6bb826/main/1788782269082-j2mcm6.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9708fb5e-0306-49e3-987f-2a8ecbe336e1",
+    "name": "Coriander Seeds (Eagle / Badami / Scoop)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9708fb5e-0306-49e3-987f-2a8ecbe336e1/main/1788782653499-mv4yr3.png",
+    "gallery_images": []
+  },
+  {
+    "id": "affbcc4f-5be1-4316-b561-1032ee9a0fd1",
+    "name": "Cumin Seeds (Jeera – Singapore 99% / 99.5%)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/affbcc4f-5be1-4316-b561-1032ee9a0fd1/main/1788783153889-bj70q5.png",
+    "gallery_images": []
+  },
+  {
+    "id": "e598d098-f619-4290-b79c-7a73f7857e96",
+    "name": "Fennel Seeds (Saunf – Green Lucknowi & Bold)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/e598d098-f619-4290-b79c-7a73f7857e96/main/1788783314442-2qgnbb.png",
+    "gallery_images": []
+  },
+  {
+    "id": "f0516e19-0f88-429a-a2ac-e2f36cc680bf",
+    "name": "Hyderabadi Biryani Spice Blend",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/f0516e19-0f88-429a-a2ac-e2f36cc680bf/main/1788783675915-xe06lm.png",
+    "gallery_images": []
+  },
+  {
+    "id": "21c2d36a-8b07-4776-9aca-51d3a77d102a",
+    "name": "Tangy Chaat Masala Blend",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/21c2d36a-8b07-4776-9aca-51d3a77d102a/main/1788783794506-q8mtdw.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9c46e5df-9d0b-4165-95da-9fcdc2e9d87f",
+    "name": "Madras Curry Powder Blend (Mild / Hot)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9c46e5df-9d0b-4165-95da-9fcdc2e9d87f/main/1788783991968-c2b1l4.png",
+    "gallery_images": []
+  },
+  {
+    "id": "9e4459d0-5ee1-4169-b6d4-eb583b14d6c6",
+    "name": "Royal Garam Masala Blend",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/9e4459d0-5ee1-4169-b6d4-eb583b14d6c6/main/1788784117976-exvx77.png",
+    "gallery_images": []
+  },
+  {
+    "id": "d9da09bc-d284-4a47-8658-1e84316bcef4",
+    "name": "Kitchen King All-Purpose Curry Spice",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/d9da09bc-d284-4a47-8658-1e84316bcef4/main/1788866713047-bcaivd.png",
+    "gallery_images": []
+  },
+  {
+    "id": "4bca32a4-9ed5-42b6-aabe-76eee78854bc",
+    "name": "Kashmiri Saffron (Mongra Grade 1)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/4bca32a4-9ed5-42b6-aabe-76eee78854bc/main/1788867167951-rfq60n.png",
+    "gallery_images": []
+  },
+  {
+    "id": "ac72aacc-9fd5-4d0a-86e3-1e818757f4eb",
+    "name": "Whole Vanilla Beans (Gourmet Grade A)",
+    "main_image": "https://cesbnetuuwzwvflmjbcs.supabase.co/storage/v1/object/public/product-images/ac72aacc-9fd5-4d0a-86e3-1e818757f4eb/main/1788867346995-l3ezwu.png",
+    "gallery_images": []
+  }
+]

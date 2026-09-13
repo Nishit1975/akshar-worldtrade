@@ -1,0 +1,18 @@
+# robots.txt for Akshar Worldtrade
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /products
+Allow: /products/*
+Allow: /why-us
+Allow: /certifications
+Allow: /quote
+Allow: /contact
+Allow: /catalogue
+
+# Disallow private admin and authentication routes
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+
+Sitemap: https://aksharworldtrade.com/sitemap.xml

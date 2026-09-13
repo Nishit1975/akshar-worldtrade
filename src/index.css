@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS — Tailwind v4 @theme
+   These generate utility classes: bg-navy-600, text-gold-500, etc.
+───────────────────────────────────────────────────────────── */
+@theme {
+  /* Navy — primary brand color */
+  --color-navy-50:  #EEF2F8;
+  --color-navy-100: #D4DFF0;
+  --color-navy-200: #A9BFE1;
+  --color-navy-300: #7E9FD2;
+  --color-navy-400: #537FC3;
+  --color-navy-500: #2B5EA7;
+  --color-navy-600: #1B3A6B;
+  --color-navy-700: #152D53;
+  --color-navy-800: #0F213C;
+  --color-navy-900: #091526;
+  --color-navy-950: #050C17;
+
+  /* Gold — accent, use sparingly */
+  --color-gold-50:  #FBF8EE;
+  --color-gold-100: #F5EDCC;
+  --color-gold-200: #EBD99A;
+  --color-gold-300: #DEC568;
+  --color-gold-400: #D4B043;
+  --color-gold-500: #C9A84C;
+  --color-gold-600: #A88B32;
+  --color-gold-700: #7D6825;
+  --color-gold-800: #524518;
+  --color-gold-900: #27220C;
+
+  /* Neutral surface colors */
+  --color-surface:    #F9F8F6;
+  --color-surface-2:  #F3F2EF;
+  --color-border:     #E8E6E1;
+
+  /* Font family */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Micro typography tokens */
+  --text-2xs: 0.6875rem;
+  --text-3xs: 0.625rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   BASE STYLES
+───────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    width: 100%;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: #1A2335;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  /* Remove tap highlight on mobile */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Remove default button styles */
+  button {
+    cursor: pointer;
+  }
+
+  /* Prevent images from overflowing without overriding explicit height/width classes */
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  img:not([class*="h-"]):not([style*="height"]),
+  video:not([class*="h-"]):not([style*="height"]) {
+    height: auto;
+  }
+
+  /* Focus visible — keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #1B3A6B;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   UTILITY OVERRIDES
+───────────────────────────────────────────────────────────── */
+
+/* Smooth transitions for interactive elements */
+a {
+  transition: color 150ms ease, opacity 150ms ease;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LOADING SCREEN  —  initial-load overlay
+   All selectors are namespaced to .akshar-loader so they
+   cannot leak into the rest of the app.
+───────────────────────────────────────────────────────────── */
+
+/* Overlay */
+.akshar-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  /* Subtle warm-white radial gradient for depth */
+  background-image: radial-gradient(ellipse 80% 60% at 50% 40%, #F9F8F6 0%, #ffffff 100%);
+  opacity: 1;
+  transition: opacity 500ms ease;
+  overflow: hidden;
+}
+
+/* Exit state — triggered just before unmount */
+.akshar-loader--exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Decorative corner L-brackets in gold */
+.akshar-loader__corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: #C9A84C;
+  border-style: solid;
+  opacity: 0.55;
+}
+.akshar-loader__corner--tl {
+  top: 32px;
+  left: 32px;
+  border-width: 2px 0 0 2px;
+  border-radius: 2px 0 0 0;
+}
+.akshar-loader__corner--br {
+  bottom: 32px;
+  right: 32px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 2px 0;
+}
+
+/* Center container */
+.akshar-loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 24px;
+  animation: akshar-fadeIn 600ms ease both;
+}
+
+/* Logo wrapper — fade + subtle rise */
+.akshar-loader__logo-wrap {
+  margin-bottom: 36px;
+}
+
+.akshar-loader__logo {
+  width: clamp(160px, 45vw, 240px);
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 2px 12px rgba(27, 58, 107, 0.08));
+}
+
+/* "LOADING" label */
+.akshar-loader__label {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #1B3A6B;
+  opacity: 0.5;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+/* Progress track */
+.akshar-loader__track {
+  width: 100%;
+  max-width: 280px;
+  height: 2px;
+  background: #E8E6E1;
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Progress bar fill */
+.akshar-loader__bar {
+  height: 100%;
+  background: linear-gradient(90deg, #C9A84C 0%, #D4B043 60%, #EBD99A 100%);
+  border-radius: 99px;
+  transition: width 80ms linear;
+  box-shadow: 0 0 6px rgba(201, 168, 76, 0.55);
+}
+
+/* Percentage counter */
+.akshar-loader__pct {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #C9A84C;
+  margin-top: 10px;
+  min-width: 3ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tagline */
+.akshar-loader__tagline {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #1B3A6B;
+  opacity: 0.4;
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+/* Keyframes */
+@keyframes akshar-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive tweaks ────────────────────────────── */
+@media (max-width: 375px) {
+  .akshar-loader__corner--tl {
+    top: 20px;
+    left: 20px;
+  }
+  .akshar-loader__corner--br {
+    bottom: 20px;
+    right: 20px;
+  }
+  .akshar-loader__logo {
+    width: clamp(130px, 48vw, 180px);
+  }
+  .akshar-loader__track {
+    max-width: 220px;
+  }
+}
+
+/* ── Reduced-motion: skip animations entirely ─────── */
+@media (prefers-reduced-motion: reduce) {
+  .akshar-loader,
+  .akshar-loader--exit,
+  .akshar-loader__inner,
+  .akshar-loader__bar {
+    animation: none !important;
+    transition: none !important;
+  }
+}
