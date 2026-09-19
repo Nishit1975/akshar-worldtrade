@@ -35,7 +35,12 @@ import AdminCategoriesPage from './pages/admin/AdminCategoriesPage'
 import { QuoteModalProvider } from './context/QuoteModalContext'
 import QuoteModal from './components/modals/QuoteModal'
 
+// Keyboard shortcuts
+import useAdminShortcut from './hooks/useAdminShortcut'
+
 function App() {
+  useAdminShortcut()
+
   return (
     <LoadingScreen>
       <BrowserRouter>
