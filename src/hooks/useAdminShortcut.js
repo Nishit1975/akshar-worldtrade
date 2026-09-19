@@ -2,17 +2,23 @@ import { useEffect } from 'react'
 
 /**
  * Global keyboard shortcut hook:
- * Pressing Ctrl + N opens the Admin Panel (/admin) in a new browser tab.
+ * Pressing Ctrl + Shift + A (or Cmd + Shift + A on macOS) opens the Admin Panel (/admin) in a new browser tab.
  * 
  * - Ignores shortcut when user is typing in inputs, textareas, selects, or contenteditable areas.
- * - Prevents default browser action where allowed.
+ * - Ignores shortcut if modifier keys other than Ctrl/Cmd + Shift are present.
+ * - Prevents default browser action when triggered.
  * - Resolves relative route /admin against current site origin.
  */
 export function useAdminShortcut() {
   useEffect(() => {
     const handleKeyDown = (event) => {
-      // Check for Ctrl + N (or Cmd + N on macOS) without Alt or Shift
-      if ((event.ctrlKey || event.metaKey) && !event.shiftKey && !event.altKey && event.key?.toLowerCase() === 'n') {
+      // Trigger only on Ctrl + Shift + A (or Cmd + Shift + A) without Alt
+      const isCtrlOrCmd = event.ctrlKey || event.metaKey
+      const isShift = event.shiftKey
+      const isAlt = event.altKey
+      const isKeyA = event.key?.toLowerCase() === 'a'
+
+      if (isCtrlOrCmd && isShift && !isAlt && isKeyA) {
         const target = event.target
         const activeEl = document.activeElement
 
