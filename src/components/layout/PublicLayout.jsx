@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import FloatingWhatsApp from '../common/FloatingWhatsApp'
 
 /**
  * PublicLayout — wraps all public-facing pages.
@@ -10,6 +11,7 @@ import Footer from './Footer'
  *   <Navbar />                  (fixed top)
  *   <main> <Outlet /> </main>   (page content — padded for navbar height)
  *   <Footer />
+ *   <FloatingWhatsApp />        (fixed bottom-right global action)
  */
 const PublicLayout = () => {
   const { pathname } = useLocation()
@@ -32,6 +34,7 @@ const PublicLayout = () => {
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </div>
   )
 }
