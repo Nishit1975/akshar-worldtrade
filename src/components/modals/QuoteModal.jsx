@@ -184,9 +184,9 @@ function QuoteDialog({ initialProduct, onClose }) {
         className="relative w-full sm:max-w-[660px] h-full sm:h-auto sm:my-auto max-h-full sm:max-h-[92vh] bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col border-0 sm:border border-navy-100/50 animate-in fade-in duration-200"
       >
         {/* ── Modal Header (Akshar Navy Background) ──────────────── */}
-        <div className="sticky top-0 z-10 bg-navy-900 px-4 sm:px-6 py-3.5 sm:py-5 text-white shrink-0 border-b border-navy-800">
+        <div className="sticky top-0 z-10 bg-navy-900 px-4 sm:px-6 py-2.5 sm:py-5 text-white shrink-0 border-b border-navy-800">
           {/* Eyebrow in Akshar Gold */}
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">
+          <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-gold-400 mb-0.5 sm:mb-1">
             <span className="h-1.5 w-1.5 rounded-full bg-gold-400" aria-hidden="true" />
             <span>REQUEST A QUOTE</span>
           </div>
@@ -194,13 +194,13 @@ function QuoteDialog({ initialProduct, onClose }) {
           {/* Title */}
           <h2
             id="quote-modal-title"
-            className="text-lg sm:text-2xl font-bold text-white tracking-tight"
+            className="text-base sm:text-2xl font-bold text-white tracking-tight leading-snug"
           >
             Request an Export Quote
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-xs sm:text-sm text-navy-100/80 leading-relaxed mt-0.5 sm:mt-1 max-w-lg">
+          <p className="text-[11px] sm:text-sm text-navy-100/80 leading-snug sm:leading-relaxed mt-0.5 sm:mt-1 max-w-lg">
             Tell us your product, quantity, destination, and other requirements. Our trade desk will review your inquiry and get back to you.
           </p>
 
@@ -209,10 +209,10 @@ function QuoteDialog({ initialProduct, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close quote modal"
-            className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 cursor-pointer"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 cursor-pointer"
           >
             <svg
-              className="h-6 w-6"
+              className="h-5 w-5 sm:h-6 sm:w-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -226,7 +226,7 @@ function QuoteDialog({ initialProduct, onClose }) {
         </div>
 
         {/* ── Modal Body (Internal Scrollable) ──────────────────── */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 pb-8 sm:pb-6 overscroll-contain">
+        <div className="flex-1 overflow-y-auto px-4 py-3 sm:p-6 sm:pb-6 overscroll-contain">
           {submitted ? (
             /* ── In-Modal Success State ─────────────────────────── */
             <div className="py-5 sm:py-7 text-center">
@@ -281,7 +281,7 @@ function QuoteDialog({ initialProduct, onClose }) {
             </div>
           ) : (
             /* ── Form View ──────────────────────────────────────── */
-            <form onSubmit={handleSubmit} noValidate className="space-y-3.5 sm:space-y-4">
+            <form onSubmit={handleSubmit} noValidate className="space-y-2.5 sm:space-y-4">
               {submitError && (
                 <div className="p-3.5 sm:p-4 rounded-xl bg-red-50 border border-red-200 text-xs sm:text-sm text-red-700 flex items-start gap-2.5">
                   <svg
@@ -301,8 +301,8 @@ function QuoteDialog({ initialProduct, onClose }) {
               )}
 
               {/* Row 1: Full Name * & Company Name */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-fullName"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -319,7 +319,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="Your full name"
                     autoComplete="name"
                     aria-invalid={!!errors.fullName}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.fullName ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -328,7 +328,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                   )}
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-companyName"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -343,14 +343,14 @@ function QuoteDialog({ initialProduct, onClose }) {
                     onChange={handleChange}
                     placeholder="Your business or trading name"
                     autoComplete="organization"
-                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                   />
                 </div>
               </div>
 
               {/* Row 2: Country * & Email Address * */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-country"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -367,7 +367,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="Destination country"
                     autoComplete="country-name"
                     aria-invalid={!!errors.country}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.country ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -376,7 +376,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                   )}
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-email"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -393,7 +393,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="business@example.com"
                     autoComplete="email"
                     aria-invalid={!!errors.email}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -404,8 +404,8 @@ function QuoteDialog({ initialProduct, onClose }) {
               </div>
 
               {/* Row 3: Phone / WhatsApp & Product of Interest */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-phone"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -420,11 +420,11 @@ function QuoteDialog({ initialProduct, onClose }) {
                     onChange={handleChange}
                     placeholder="+1 234 567 890"
                     autoComplete="tel"
-                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                   />
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5 sm:gap-1">
                   <label
                     htmlFor="modal-product"
                     className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -437,7 +437,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                       name="product"
                       value={formData.product}
                       onChange={handleChange}
-                      className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 pr-10 text-base sm:text-sm text-navy-950 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 appearance-none"
+                      className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 pr-10 text-base sm:text-sm text-navy-950 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 appearance-none"
                     >
                       {productOptions.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -465,7 +465,7 @@ function QuoteDialog({ initialProduct, onClose }) {
               </div>
 
               {/* Row 4: Quantity / Requirement */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-0.5 sm:gap-1">
                 <label
                   htmlFor="modal-quantity"
                   className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -479,12 +479,12 @@ function QuoteDialog({ initialProduct, onClose }) {
                   value={formData.quantity}
                   onChange={handleChange}
                   placeholder="e.g. 1x20ft FCL, 50 MT, trial shipment"
-                  className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                  className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                 />
               </div>
 
               {/* Row 5: Your Message * */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-0.5 sm:gap-1">
                 <label
                   htmlFor="modal-message"
                   className="text-xs sm:text-[13px] font-semibold text-navy-900"
@@ -495,12 +495,12 @@ function QuoteDialog({ initialProduct, onClose }) {
                   id="modal-message"
                   name="message"
                   required
-                  rows={3}
+                  rows={2}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Please specify destination port, delivery terms (FOB/CIF), packaging preference, or target timeline…"
                   aria-invalid={!!errors.message}
-                  className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                  className={`block w-full rounded-lg border bg-white px-3 sm:px-3.5 py-1.5 sm:py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 min-h-[52px] sm:min-h-[80px] ${
                     errors.message ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                   }`}
                 />
@@ -510,11 +510,11 @@ function QuoteDialog({ initialProduct, onClose }) {
               </div>
 
               {/* Actions Section: Primary Submit + WhatsApp Secondary */}
-              <div className="pt-1.5 space-y-2.5">
+              <div className="pt-1 sm:pt-1.5 space-y-2 sm:space-y-2.5">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 bg-gold-500 hover:bg-gold-400 disabled:bg-gold-300 disabled:cursor-not-allowed text-navy-950 text-sm sm:text-base font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-150 min-h-[46px] cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3 px-5 sm:px-6 bg-gold-500 hover:bg-gold-400 disabled:bg-gold-300 disabled:cursor-not-allowed text-navy-950 text-sm sm:text-base font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-150 min-h-[44px] sm:min-h-[46px] cursor-pointer"
                 >
                   {loading ? (
                     <>
@@ -548,23 +548,45 @@ function QuoteDialog({ initialProduct, onClose }) {
                   )}
                 </button>
 
-                <div className="flex items-center justify-center gap-3 text-xs text-slate-400">
+                <div className="flex items-center justify-center gap-2.5 text-[11px] sm:text-xs text-slate-400">
                   <span className="h-px flex-1 bg-slate-200" />
                   <span>or connect directly</span>
                   <span className="h-px flex-1 bg-slate-200" />
                 </div>
 
+                {/* Desktop: standard full-width WhatsApp button */}
                 <a
                   href="https://wa.me/916353855938"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold rounded-xl shadow-sm transition-colors min-h-[44px] cursor-pointer"
+                  className="hidden sm:inline-flex w-full items-center justify-center gap-2 py-2.5 sm:py-3 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold rounded-xl shadow-sm transition-colors min-h-[44px] cursor-pointer"
                 >
                   <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
                   <span>Chat on WhatsApp</span>
                 </a>
+
+                {/* Mobile: compact WhatsApp icon button */}
+                <div className="flex justify-center sm:hidden pt-0.5">
+                  <a
+                    href="https://wa.me/916353855938"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with Akshar Worldtrade on WhatsApp"
+                    title="Chat with Akshar Worldtrade on WhatsApp"
+                    className="inline-flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-sm transition-transform active:scale-95 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+                  >
+                    <svg
+                      className="h-5 w-5 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </form>
           )}
