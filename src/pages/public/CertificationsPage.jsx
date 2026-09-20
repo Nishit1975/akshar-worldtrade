@@ -3,7 +3,7 @@ import Container from '../../components/ui/Container'
 import Eyebrow from '../../components/ui/Eyebrow'
 import BuyerCTA from '../../components/sections/BuyerCTA'
 import { getCanonicalUrl } from '../../config/company'
-import certificationImg from '../../assets/certification.png'
+import certificationImg from '../../assets/certification.webp'
 
 /**
  * Five relevant export documentation categories.
@@ -142,7 +142,7 @@ function CertificationsPage() {
                 height={853}
                 loading="eager"
                 decoding="async"
-                className="w-full max-w-sm sm:max-w-md lg:max-w-full h-auto object-contain rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-2xs"
+                className="w-full max-w-sm sm:max-w-md lg:max-w-full max-h-[220px] lg:max-h-none h-auto object-contain rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-2xs"
               />
             </div>
           </div>

@@ -35,7 +35,7 @@ const pillars = [
  */
 const TrustSection = () => {
   return (
-    <section className="bg-surface py-16 lg:py-20" aria-label="About Akshar Worldtrade">
+    <section className="bg-surface py-8 sm:py-12 lg:py-16" aria-label="About Akshar Worldtrade">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

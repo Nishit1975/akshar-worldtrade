@@ -129,11 +129,20 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* ── Mobile Menu Backdrop Scrim ─────────────────────────── */}
+      {isMobileOpen && (
+        <div
+          className="fixed inset-0 top-16 z-40 bg-navy-950/40 backdrop-blur-xs lg:hidden transition-opacity duration-200"
+          onClick={closeMobile}
+          aria-hidden="true"
+        />
+      )}
+
       {/* ── Mobile Menu ─────────────────────────────────────────── */}
       {isMobileOpen && (
         <div
           id="mobile-menu"
-          className="lg:hidden border-t border-gray-100 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto shadow-lg"
+          className="relative z-50 lg:hidden border-t border-gray-100 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto shadow-xl"
         >
           <nav
             className="flex flex-col py-2"

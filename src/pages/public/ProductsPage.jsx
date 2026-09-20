@@ -364,7 +364,7 @@ const ProductsPage = () => {
                       placeholder="Search products by name or category..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
-                      className="w-full pl-10 pr-10 py-2.5 min-h-[44px] sm:min-h-[40px] text-sm bg-slate-50/80 hover:bg-slate-50 focus:bg-white text-navy-950 placeholder-slate-400 border border-slate-200 rounded-xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                      className="w-full pl-10 pr-10 py-2.5 min-h-[44px] sm:min-h-[40px] text-base sm:text-sm bg-slate-50/80 hover:bg-slate-50 focus:bg-white text-navy-950 placeholder-slate-400 border border-slate-200 rounded-xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                     />
                     {search && (
                       <button
@@ -382,13 +382,13 @@ const ProductsPage = () => {
 
                   {/* Main Category Filter Tabs */}
                   {categoriesList.length > 0 && (
-                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2" role="group" aria-label="Filter by product category">
+                    <div className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 sm:gap-2 overflow-x-auto sm:overflow-x-visible pb-1.5 sm:pb-0 -mx-1 px-1 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" role="group" aria-label="Filter by product category">
                       {/* "All" Tab */}
                       <button
                         type="button"
                         onClick={() => handleCategoryChange('all')}
                         className={[
-                          'inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-xl border transition-all duration-150 min-h-[40px]',
+                          'inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-xl border transition-all duration-150 min-h-[40px] shrink-0 sm:shrink',
                           (!activeCategory || activeCategory === 'all')
                             ? 'bg-navy-600 text-white border-navy-600 shadow-2xs'
                             : 'bg-surface hover:bg-slate-100 text-slate-700 hover:text-navy-900 border-slate-200/80',
@@ -420,7 +420,7 @@ const ProductsPage = () => {
                             type="button"
                             onClick={() => handleCategoryChange(cat.slug || cat.id)}
                             className={[
-                              'inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-xl border transition-all duration-150 min-h-[40px]',
+                              'inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-xl border transition-all duration-150 min-h-[40px] shrink-0 sm:shrink',
                               active
                                 ? 'bg-navy-600 text-white border-navy-600 shadow-2xs'
                                 : 'bg-surface hover:bg-slate-100 text-slate-700 hover:text-navy-900 border-slate-200/80',
@@ -448,11 +448,11 @@ const ProductsPage = () => {
                 {/* ── Subcategory Filter Bar (Spices & Seasonings etc.) ── */}
                 {relevantSubcategories.length > 0 && (
                   <div
-                    className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-3 mt-3 sm:pt-3.5 sm:mt-3.5 border-t border-slate-100"
+                    className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 sm:gap-2 pt-3 mt-3 sm:pt-3.5 sm:mt-3.5 border-t border-slate-100 overflow-x-auto sm:overflow-x-visible pb-1 sm:pb-0 -mx-1 px-1 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                     role="group"
                     aria-label="Filter by subcategory"
                   >
-                    <span className="text-2xs font-bold uppercase tracking-wider text-slate-400 mr-1 flex items-center gap-1 w-full sm:w-auto mb-1 sm:mb-0">
+                    <span className="text-2xs font-bold uppercase tracking-wider text-slate-400 mr-1 flex items-center gap-1 shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold-500" aria-hidden="true" />
                       <span>Subcategory:</span>
                     </span>
@@ -462,7 +462,7 @@ const ProductsPage = () => {
                       type="button"
                       onClick={() => handleSubcategoryChange('all')}
                       className={[
-                        'inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs font-semibold rounded-lg border transition-all duration-150 min-h-[36px]',
+                        'inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs font-semibold rounded-lg border transition-all duration-150 min-h-[36px] shrink-0 sm:shrink',
                         (!activeSubcategory || activeSubcategory === 'all')
                           ? 'bg-gold-500 text-navy-950 border-gold-500 font-bold shadow-2xs'
                           : 'bg-white hover:bg-slate-50 text-slate-600 hover:text-navy-900 border-slate-200',
@@ -493,7 +493,7 @@ const ProductsPage = () => {
                           type="button"
                           onClick={() => handleSubcategoryChange(sub.slug || sub.id)}
                           className={[
-                            'inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs font-semibold rounded-lg border transition-all duration-150 min-h-[36px]',
+                            'inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs font-semibold rounded-lg border transition-all duration-150 min-h-[36px] shrink-0 sm:shrink',
                             active
                               ? 'bg-gold-500 text-navy-950 border-gold-500 font-bold shadow-2xs'
                               : 'bg-white hover:bg-slate-50 text-slate-600 hover:text-navy-900 border-slate-200',

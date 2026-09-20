@@ -39,7 +39,7 @@ const Hero = () => {
             </Eyebrow>
 
             {/* Main Headline */}
-            <h1 className="text-[clamp(2.15rem,5.5vw+0.75rem,2.5rem)] sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.4rem] font-extrabold text-navy-900 leading-[1.14] tracking-tight">
+            <h1 className="text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.4rem] font-extrabold text-navy-900 leading-[1.2] sm:leading-[1.14] tracking-tight">
               Connecting India<br />
               <span className="text-navy-600">
                 with the World

@@ -94,9 +94,9 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`AKSHAR WORLDTRADE on ${name}`}
-                    className="w-8 h-8 rounded-lg bg-white text-navy-700 hover:text-navy-950 hover:bg-gold-50 hover:border-gold-400 flex items-center justify-center border border-slate-200 shadow-2xs transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-navy-600"
+                    className="min-w-[44px] min-h-[44px] w-11 h-11 sm:w-9 sm:h-9 rounded-lg bg-white text-navy-700 hover:text-navy-950 hover:bg-gold-50 hover:border-gold-400 flex items-center justify-center border border-slate-200 shadow-2xs transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-navy-600"
                   >
-                    <Icon className="w-3.5 h-3.5 fill-current" />
+                    <Icon className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current" />
                   </a>
                 ))}
               </div>
@@ -108,21 +108,21 @@ const Footer = () => {
             <h3 className="text-xs font-bold tracking-widest uppercase text-navy-900 mb-2.5 sm:mb-3">
               Quick Links
             </h3>
-            <ul className="flex flex-col gap-1 sm:gap-1.5">
+            <ul className="flex flex-col gap-0.5 sm:gap-1">
               {quickLinks.map(({ label, to }) => (
                 <li key={label}>
                   {label === 'Get a Quote' ? (
                     <button
                       type="button"
                       onClick={() => openQuoteModal()}
-                      className="py-0.5 text-left inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150 cursor-pointer"
+                      className="py-1.5 text-left inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150 cursor-pointer"
                     >
                       {label}
                     </button>
                   ) : (
                     <Link
                       to={to}
-                      className="py-0.5 inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150"
+                      className="py-1.5 inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150"
                     >
                       {label}
                     </Link>
@@ -137,12 +137,12 @@ const Footer = () => {
             <h3 className="text-xs font-bold tracking-widest uppercase text-navy-900 mb-2.5 sm:mb-3">
               Products
             </h3>
-            <ul className="flex flex-col gap-1 sm:gap-1.5">
+            <ul className="flex flex-col gap-0.5 sm:gap-1">
               {productLinks.map(({ label, to }) => (
                 <li key={label}>
                   <Link
                     to={to}
-                    className="py-0.5 inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150"
+                    className="py-1.5 inline-block text-xs sm:text-[13px] text-slate-500 hover:text-navy-800 transition-colors duration-150"
                   >
                     {label}
                   </Link>

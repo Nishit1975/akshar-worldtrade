@@ -76,7 +76,7 @@ const ProductImageGallery = ({ mainImage, galleryImages = [], name, category }) 
                 type="button"
                 onClick={() => setSelectedImage(imgUrl)}
                 className={[
-                  'h-16 w-16 sm:h-20 sm:w-20 flex-shrink-0 rounded-xl overflow-hidden border-2 bg-slate-50 transition-all duration-150',
+                  'h-16 w-16 sm:h-20 sm:w-20 min-h-[44px] min-w-[44px] flex-shrink-0 rounded-xl overflow-hidden border-2 bg-slate-50 transition-all duration-150 cursor-pointer',
                   isSelected ? 'border-navy-600 ring-2 ring-navy-600/20 shadow-sm' : 'border-slate-200 hover:border-slate-300 opacity-75 hover:opacity-100',
                 ].join(' ')}
                 aria-label={`View image ${idx + 1} of ${name}`}
@@ -438,8 +438,8 @@ const ProductDetailPage = () => {
                     Technical Specifications
                   </h2>
                   <div className="h-0.5 w-10 bg-gold-500 rounded-full mb-3.5 sm:mb-4" aria-hidden="true" />
-                  <div className="overflow-hidden rounded-xl border border-slate-200/70">
-                    <table className="w-full text-left border-collapse">
+                  <div className="overflow-x-auto rounded-xl border border-slate-200/70 [scrollbar-width:thin]">
+                    <table className="w-full min-w-[280px] text-left border-collapse">
                       <tbody>
                         {Object.entries(specifications).map(([label, value], idx) => (
                           <SpecRow key={label} label={label} value={value} isEven={idx % 2 === 0} />

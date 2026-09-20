@@ -45,7 +45,7 @@ const Select = forwardRef(function Select(
           aria-describedby={error ? `${inputId}-error` : helper ? `${inputId}-helper` : undefined}
           className={[
             'block w-full rounded border border-gray-200 bg-white',
-            'px-3.5 py-2.5 pr-10 text-sm text-gray-900',
+            'px-3.5 py-2.5 pr-10 text-base sm:text-sm text-gray-900',
             'appearance-none transition-colors duration-150',
             'focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-navy-500',
             'disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed',

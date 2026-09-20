@@ -172,7 +172,7 @@ function QuoteDialog({ initialProduct, onClose }) {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto bg-navy-950/75 backdrop-blur-sm transition-opacity duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 overflow-hidden sm:overflow-y-auto bg-navy-950/75 backdrop-blur-sm transition-opacity duration-200"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
@@ -181,10 +181,10 @@ function QuoteDialog({ initialProduct, onClose }) {
       <div
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-[660px] my-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] border border-navy-100/50 animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full sm:max-w-[660px] h-full sm:h-auto sm:my-auto max-h-full sm:max-h-[92vh] bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col border-0 sm:border border-navy-100/50 animate-in fade-in duration-200"
       >
         {/* ── Modal Header (Akshar Navy Background) ──────────────── */}
-        <div className="bg-navy-900 px-5 sm:px-6 py-4 sm:py-5 text-white relative shrink-0 border-b border-navy-800">
+        <div className="sticky top-0 z-10 bg-navy-900 px-4 sm:px-6 py-3.5 sm:py-5 text-white shrink-0 border-b border-navy-800">
           {/* Eyebrow in Akshar Gold */}
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">
             <span className="h-1.5 w-1.5 rounded-full bg-gold-400" aria-hidden="true" />
@@ -194,13 +194,13 @@ function QuoteDialog({ initialProduct, onClose }) {
           {/* Title */}
           <h2
             id="quote-modal-title"
-            className="text-xl sm:text-2xl font-bold text-white tracking-tight"
+            className="text-lg sm:text-2xl font-bold text-white tracking-tight"
           >
             Request an Export Quote
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-xs sm:text-sm text-navy-100/80 leading-relaxed mt-1 max-w-lg">
+          <p className="text-xs sm:text-sm text-navy-100/80 leading-relaxed mt-0.5 sm:mt-1 max-w-lg">
             Tell us your product, quantity, destination, and other requirements. Our trade desk will review your inquiry and get back to you.
           </p>
 
@@ -209,7 +209,7 @@ function QuoteDialog({ initialProduct, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close quote modal"
-            className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 cursor-pointer"
+            className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 cursor-pointer"
           >
             <svg
               className="h-6 w-6"
@@ -226,7 +226,7 @@ function QuoteDialog({ initialProduct, onClose }) {
         </div>
 
         {/* ── Modal Body (Internal Scrollable) ──────────────────── */}
-        <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(92vh-120px)]">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 pb-8 sm:pb-6 overscroll-contain">
           {submitted ? (
             /* ── In-Modal Success State ─────────────────────────── */
             <div className="py-5 sm:py-7 text-center">
@@ -319,7 +319,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="Your full name"
                     autoComplete="name"
                     aria-invalid={!!errors.fullName}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.fullName ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -343,7 +343,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     onChange={handleChange}
                     placeholder="Your business or trading name"
                     autoComplete="organization"
-                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                   />
                 </div>
               </div>
@@ -367,7 +367,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="Destination country"
                     autoComplete="country-name"
                     aria-invalid={!!errors.country}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.country ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -393,7 +393,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     placeholder="business@example.com"
                     autoComplete="email"
                     aria-invalid={!!errors.email}
-                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                    className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                       errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                     }`}
                   />
@@ -420,7 +420,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                     onChange={handleChange}
                     placeholder="+1 234 567 890"
                     autoComplete="tel"
-                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                    className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                   />
                 </div>
 
@@ -437,7 +437,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                       name="product"
                       value={formData.product}
                       onChange={handleChange}
-                      className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 pr-10 text-sm text-navy-950 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 appearance-none"
+                      className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 pr-10 text-base sm:text-sm text-navy-950 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 appearance-none"
                     >
                       {productOptions.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -479,7 +479,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                   value={formData.quantity}
                   onChange={handleChange}
                   placeholder="e.g. 1x20ft FCL, 50 MT, trial shipment"
-                  className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
+                  className="block w-full rounded-lg border border-slate-200 hover:border-slate-300 bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600"
                 />
               </div>
 
@@ -500,7 +500,7 @@ function QuoteDialog({ initialProduct, onClose }) {
                   onChange={handleChange}
                   placeholder="Please specify destination port, delivery terms (FOB/CIF), packaging preference, or target timeline…"
                   aria-invalid={!!errors.message}
-                  className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
+                  className={`block w-full rounded-lg border bg-white px-3.5 py-2.5 text-base sm:text-sm text-navy-950 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-navy-600 focus:border-navy-600 ${
                     errors.message ? 'border-red-400 ring-1 ring-red-400' : 'border-slate-200 hover:border-slate-300'
                   }`}
                 />

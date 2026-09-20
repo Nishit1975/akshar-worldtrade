@@ -4,7 +4,7 @@ import Container from '../../components/ui/Container'
 import Eyebrow from '../../components/ui/Eyebrow'
 import BuyerCTA from '../../components/sections/BuyerCTA'
 import { company, getCanonicalUrl } from '../../config/company'
-import aboutVisual from '../../assets/holding.png'
+import aboutVisual from '../../assets/holding.webp'
 import { useQuoteModal } from '../../context/QuoteModalContext'
 
 const values = [
@@ -143,8 +143,8 @@ const AboutPage = () => {
       <section className="bg-white py-8 sm:py-10 lg:py-14 border-b border-gray-100" aria-label="About our company">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 items-center">
-            {/* Left Column: Visual Presentation using provided holding.png asset */}
-            <div className="lg:col-span-6 xl:col-span-6 flex justify-center">
+            {/* Left Column: Visual Presentation using provided holding.webp asset */}
+            <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-6 flex justify-center">
               <img
                 src={aboutVisual}
                 alt="Akshar Worldtrade export logistics and global trade partner"
@@ -157,7 +157,7 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column: Editorial & Company Direction */}
-            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
+            <div className="order-1 lg:order-2 lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gold-600 mb-1.5 sm:mb-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold-500" aria-hidden="true" />
                 <span>About Our Company</span>
