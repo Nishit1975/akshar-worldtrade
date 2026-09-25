@@ -29,42 +29,43 @@ const Hero = () => {
       <Container>
         {/*
           ── Main Hero Layout ──────────────────────────────────────────
-          Mobile  : flex-col with explicit order-* so the image (order-3)
-                    slots between the heading (order-2) and description (order-4).
-          Desktop : lg:grid + lg:grid-cols-12 restores the original two-column
-                    grid. lg:contents on the left-wrapper makes its children
-                    participate directly in the grid flow, each with lg:col-span-6.
-                    The image column also carries lg:col-span-6 and lg:row-span-5
-                    to span all left-column rows.
+          Mobile  (< 1024px) : flex-col parent + contents left-wrapper allows
+                               order-* to interleave:
+                               order-1 (badge) → order-2 (headline) →
+                               order-3 (image) → order-4 (description) →
+                               order-5 (buttons) → order-6 (trust pillars).
+          Desktop (>= 1024px): lg:grid with 12 cols. The left-wrapper is
+                               lg:flex lg:flex-col lg:col-span-6, restoring the
+                               original 2-column grid child without display: contents.
+                               The right visual is lg:col-span-6.
         */}
         <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16 lg:items-center">
 
-          {/* ── Left Column wrapper — on mobile: transparent passthrough (contents);
-               on desktop: becomes a proper grid column ─────────────────── */}
-          <div className="contents lg:contents lg:col-span-6 xl:col-span-6">
+          {/* ── Left Column: Brand Message & Actions (approx 50%) ─────
+               Mobile  : contents so children participate in parent flex ordering
+               Desktop : proper 6-column flex container (NOT display: contents) */}
+          <div className="contents lg:flex lg:flex-col lg:justify-center lg:col-span-6 xl:col-span-6">
+            
+            {/* Category / Subtitle Pill Badge */}
+            <Eyebrow className="order-1 lg:order-none mb-2.5 sm:mb-3.5">
+              Import&nbsp;|&nbsp;Export&nbsp;|&nbsp;Global Trade
+            </Eyebrow>
 
-            {/* 1 ── Category / Subtitle Pill Badge */}
-            <div className="order-1 lg:order-none lg:col-span-6 xl:col-span-6 mb-2.5 sm:mb-3.5">
-              <Eyebrow>
-                Import&nbsp;|&nbsp;Export&nbsp;|&nbsp;Global Trade
-              </Eyebrow>
-            </div>
-
-            {/* 2 ── Main Headline */}
-            <h1 className="order-2 lg:order-none lg:col-span-6 xl:col-span-6 text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.4rem] font-extrabold text-navy-900 leading-[1.2] sm:leading-[1.14] tracking-tight mb-0">
+            {/* Main Headline */}
+            <h1 className="order-2 lg:order-none text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.4rem] font-extrabold text-navy-900 leading-[1.2] sm:leading-[1.14] tracking-tight">
               Connecting India<br />
               <span className="text-navy-600">
                 with the World
               </span>
             </h1>
 
-            {/* 4 ── Value Proposition Description */}
-            <p className="order-4 lg:order-none lg:col-span-6 xl:col-span-6 mt-3 sm:mt-3.5 text-[15px] sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl">
+            {/* Value Proposition Description */}
+            <p className="order-4 lg:order-none mt-3 sm:mt-3.5 text-[15px] sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl">
               Akshar Worldtrade bridges international buyers with quality Indian products — offering reliable sourcing, transparent trade documentation, and long-term business partnerships built on trust.
             </p>
 
-            {/* 5 ── Action Buttons */}
-            <div className="order-5 lg:order-none lg:col-span-6 xl:col-span-6 mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-3.5">
+            {/* Action Buttons */}
+            <div className="order-5 lg:order-none mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-3.5">
               <Link
                 to="/products"
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-navy-600 hover:bg-navy-700 text-white text-sm font-semibold rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-navy-600 focus-visible:outline-offset-2"
@@ -93,8 +94,8 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* 6 ── Trust & Quality Pillars */}
-            <div className="order-6 lg:order-none lg:col-span-6 xl:col-span-6 mt-5 pt-4 sm:mt-7 sm:pt-5 border-t border-gray-100 flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-y-2.5 text-xs sm:text-sm text-slate-600 font-medium">
+            {/* Trust & Quality Pillars */}
+            <div className="order-6 lg:order-none mt-5 pt-4 sm:mt-7 sm:pt-5 border-t border-gray-100 flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-y-2.5 text-xs sm:text-sm text-slate-600 font-medium">
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-gold-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -117,10 +118,8 @@ const Hero = () => {
 
           </div>
 
-          {/* 3 ── Right Column: Large Premium Global Trade Visual ───────
-               Mobile  : order-3 (between heading and description)
-               Desktop : lg:col-span-6, lg:row-span-6 to span all left rows */}
-          <div className="order-3 lg:order-none lg:col-span-6 xl:col-span-6 lg:row-span-6 flex items-center justify-center mt-4 lg:mt-0">
+          {/* ── Right Column: Large Premium Global Trade Visual (approx 50%) */}
+          <div className="order-3 lg:order-none lg:col-span-6 xl:col-span-6 flex items-center justify-center my-4 sm:my-5 lg:my-0">
             <div className="relative w-full max-w-xl lg:max-w-none">
               
               {/* Outer decorative ambient glow frame */}
@@ -151,5 +150,3 @@ const Hero = () => {
 }
 
 export default Hero
-
-
