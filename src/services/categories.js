@@ -204,21 +204,33 @@ export async function fetchShowcaseCategories() {
       return { data: cached, error: null }
     }
 
-    // Fetch active categories with published-product counts in a single query.
-    // The filter inside the embedded relation restricts the count to published
-    // products only, matching the public visibility rules used site-wide.
+    // ── Step 1: Fetch active categories ─────────────────────────────────────
     const { data: cats, error: catErr } = await supabase
       .from('categories')
-      .select(`
-        id,
-        name,
-        slug,
-        description,
-        is_active,
-        products(count).eq(status,published)
-      `)
+      .select('id, name, slug, description, is_active')
       .eq('is_active', true)
       .order('name', { ascending: true })
+
+    // ── Step 2: Fetch published-product counts per category ──────────────────
+    // A single flat query returning category_id for every published product.
+    // We count them in JS to get an exact per-category published-only count.
+    // This avoids the non-standard `products(count).eq(...)` select-string
+    // filter syntax that PostgREST silently ignores, which caused the count
+    // to include draft products and display the wrong number on the Home page.
+    const { data: pubRows, error: pubErr } = await supabase
+      .from('products')
+      .select('category_id')
+      .eq('status', 'published')
+
+    // Build a Map: category_id → published product count
+    const publishedCountMap = new Map()
+    if (!pubErr && pubRows) {
+      for (const row of pubRows) {
+        if (row.category_id) {
+          publishedCountMap.set(row.category_id, (publishedCountMap.get(row.category_id) ?? 0) + 1)
+        }
+      }
+    }
 
     if (catErr) {
       if (import.meta.env.DEV) {
@@ -233,7 +245,7 @@ export async function fetchShowcaseCategories() {
 
     // Enrich categories with images, natural descriptions, and counts
     const showcaseCategories = cats.map((cat) => {
-      const productCount = cat.products?.[0]?.count ?? 0
+      const productCount = publishedCountMap.get(cat.id) ?? 0
 
       const isSpices =
         cat.slug === 'spices-seasonings' ||
