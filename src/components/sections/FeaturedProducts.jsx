@@ -15,7 +15,7 @@ const INITIAL_SHOWCASE_CATEGORIES = [
     slug: 'grains-cereals',
     description: "Premium export-grade grains, basmati rice, wheat, and cereals harvested from India's finest agricultural regions.",
     image: grainsCerealsImg,
-    product_count: 7,
+    product_count: 0,
   },
   {
     id: 'milling-flours',
@@ -31,7 +31,7 @@ const INITIAL_SHOWCASE_CATEGORIES = [
     slug: 'spices-seasonings',
     description: 'Authentic Indian spices sourced directly from origin, cleaned, graded, and packed to global export standards.',
     image: spicesSeasoningsImg,
-    product_count: 39,
+    product_count: 0,
   },
 ]
 

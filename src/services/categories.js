@@ -204,7 +204,9 @@ export async function fetchShowcaseCategories() {
       return { data: cached, error: null }
     }
 
-    // Fetch active categories with product counts in a single query
+    // Fetch active categories with published-product counts in a single query.
+    // The filter inside the embedded relation restricts the count to published
+    // products only, matching the public visibility rules used site-wide.
     const { data: cats, error: catErr } = await supabase
       .from('categories')
       .select(`
@@ -213,7 +215,7 @@ export async function fetchShowcaseCategories() {
         slug,
         description,
         is_active,
-        products(count)
+        products(count).eq(status,published)
       `)
       .eq('is_active', true)
       .order('name', { ascending: true })
