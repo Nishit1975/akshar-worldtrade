@@ -29,57 +29,57 @@ export async function submitEnquiry(enquiryData) {
       status: 'new',
     }
 
-    const { data, error } = await supabase
+    // INSERT only — do NOT chain .select() here.
+    // The anon role has INSERT permission on enquiries (RLS policy: "Anyone can submit an enquiry")
+    // but has NO SELECT permission (admin-only). Chaining .select().single() after insert causes
+    // Supabase to attempt a SELECT as anon, which RLS correctly blocks with a 403 error,
+    // making the entire submission appear to fail even though the INSERT succeeded.
+    const { error } = await supabase
       .from('enquiries')
       .insert([payload])
-      .select()
-      .single()
 
     if (error) {
       if (import.meta.env.DEV) {
-        console.error('Error submitting enquiry:', error.message)
+        console.error('Error submitting enquiry:', error.message, '| code:', error.code)
       }
       return { data: null, error }
     }
 
-    // 2. Trigger secure server-side email notifications via Supabase Edge Function
-    // Non-blocking: failure to send email must NEVER fail or rollback the enquiry submission
-    if (data?.id) {
-      supabase.functions
-        .invoke('send-enquiry-emails', {
-          body: {
-            enquiryId: data.id,
-            enquiry: {
-              id: data.id,
-              name: data.name,
-              company_name: data.company_name,
-              country: data.country,
-              email: data.email,
-              phone: data.phone,
-              product: data.product,
-              quantity: data.quantity,
-              message: data.message,
-              created_at: data.created_at,
-            },
+    // 2. Trigger secure server-side email notifications via Supabase Edge Function.
+    // Non-blocking: email failure must NEVER fail or rollback the enquiry submission.
+    // The Edge Function accepts the full enquiry payload as a fallback (enquiryId is optional).
+    supabase.functions
+      .invoke('send-enquiry-emails', {
+        body: {
+          enquiry: {
+            name: payload.name,
+            company_name: payload.company_name,
+            country: payload.country,
+            email: payload.email,
+            phone: payload.phone,
+            product: payload.product,
+            quantity: payload.quantity,
+            message: payload.message,
+            created_at: new Date().toISOString(),
           },
-        })
-        .then(({ data: fnData, error: fnErr }) => {
-          if (import.meta.env.DEV) {
-            if (fnErr) {
-              console.warn('Edge Function email notification warning:', fnErr.message)
-            } else {
-              console.log('Enquiry email notifications triggered:', fnData)
-            }
+        },
+      })
+      .then(({ data: fnData, error: fnErr }) => {
+        if (import.meta.env.DEV) {
+          if (fnErr) {
+            console.warn('Edge Function email notification warning:', fnErr.message)
+          } else {
+            console.log('Enquiry email notifications triggered:', fnData)
           }
-        })
-        .catch((err) => {
-          if (import.meta.env.DEV) {
-            console.warn('Edge Function email invoke caught error:', err)
-          }
-        })
-    }
+        }
+      })
+      .catch((err) => {
+        if (import.meta.env.DEV) {
+          console.warn('Edge Function email invoke caught error:', err)
+        }
+      })
 
-    return { data, error: null }
+    return { data: payload, error: null }
   } catch (err) {
     if (import.meta.env.DEV) {
       console.error('Unexpected error in submitEnquiry:', err)

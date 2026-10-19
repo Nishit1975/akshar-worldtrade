@@ -2,6 +2,7 @@ import { supabase } from './supabase'
 import grainsCerealsImg from '../assets/grains-cereals.webp'
 import spicesSeasoningsImg from '../assets/spices-seasonings.webp'
 import millingFloursImg from '../assets/Milling Flours.png'
+import biodegradableBagsImg from '../assets/bd.png'
 import { getCache, setCache, invalidateCache } from './cache'
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -162,6 +163,9 @@ const DEFAULT_CATEGORY_DESCRIPTIONS = {
   'oilseeds': "Superior quality oilseeds and natural seeds processed for food, confectionery, and industrial use.",
   'milling-products-flours': 'Quality Indian flours sourced for consistent texture, reliable food applications, and international export requirements.',
   'milling-flours': 'Quality Indian flours sourced for consistent texture, reliable food applications, and international export requirements.',
+  'biodegradable-compostable-bags': 'Eco-friendly biodegradable and compostable bags manufactured to international standards for sustainable packaging solutions.',
+  'biodegradable-bags': 'Eco-friendly biodegradable and compostable bags manufactured to international standards for sustainable packaging solutions.',
+  'biodegradable-compostable': 'Eco-friendly biodegradable and compostable bags manufactured to international standards for sustainable packaging solutions.',
 }
 
 /**
@@ -178,6 +182,9 @@ const CATEGORY_ASSET_IMAGES = {
   'spices': spicesSeasoningsImg,
   'milling-products-flours': millingFloursImg,
   'milling-flours': millingFloursImg,
+  'biodegradable-compostable-bags': biodegradableBagsImg,
+  'biodegradable-bags': biodegradableBagsImg,
+  'biodegradable-compostable': biodegradableBagsImg,
 }
 
 /**
@@ -187,6 +194,9 @@ const CATEGORY_ASSET_IMAGES = {
 const CATEGORY_DISPLAY_NAMES = {
   'milling-products-flours': 'Milling Flours',
   'milling-flours': 'Milling Flours',
+  'biodegradable-compostable-bags': 'Biodegradable & Compostable Bags',
+  'biodegradable-bags': 'Biodegradable & Compostable Bags',
+  'biodegradable-compostable': 'Biodegradable & Compostable Bags',
 }
 
 /**

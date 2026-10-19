@@ -3,6 +3,7 @@ import Badge from './Badge'
 import grainsCerealsImg from '../../assets/grains-cereals.webp'
 import spicesSeasoningsImg from '../../assets/spices-seasonings.webp'
 import millingFloursImg from '../../assets/Milling Flours.png'
+import biodegradableBagsImg from '../../assets/bd.png'
 
 /**
  * CategoryCard — Category showcase card used on the Home Page.
@@ -67,13 +68,23 @@ const CategoryCard = ({ category, className = '' }) => {
     name.toLowerCase() === 'milling products & flours' ||
     name.toLowerCase() === 'milling products and flours'
 
+  const isBiodegradable =
+    slug === 'biodegradable-compostable-bags' ||
+    slug === 'biodegradable-bags' ||
+    slug === 'biodegradable-compostable' ||
+    name.toLowerCase() === 'biodegradable & compostable bags' ||
+    name.toLowerCase() === 'biodegradable and compostable bags' ||
+    name.toLowerCase().startsWith('biodegradable')
+
   const fallbackImage = isSpices
     ? spicesSeasoningsImg
     : isGrains
       ? grainsCerealsImg
       : isMilling
         ? millingFloursImg
-        : null
+        : isBiodegradable
+          ? biodegradableBagsImg
+          : null
 
   const image = category.image || fallbackImage
 

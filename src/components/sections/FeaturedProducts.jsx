@@ -7,6 +7,7 @@ import { fetchShowcaseCategories } from '../../services/categories'
 import grainsCerealsImg from '../../assets/grains-cereals.webp'
 import spicesSeasoningsImg from '../../assets/spices-seasonings.webp'
 import millingFloursImg from '../../assets/Milling Flours.png'
+import biodegradableBagsImg from '../../assets/bd.png'
 
 const INITIAL_SHOWCASE_CATEGORIES = [
   {
@@ -31,6 +32,14 @@ const INITIAL_SHOWCASE_CATEGORIES = [
     slug: 'spices-seasonings',
     description: 'Authentic Indian spices sourced directly from origin, cleaned, graded, and packed to global export standards.',
     image: spicesSeasoningsImg,
+    product_count: 0,
+  },
+  {
+    id: 'biodegradable-compostable-bags',
+    name: 'Biodegradable & Compostable Bags',
+    slug: 'biodegradable-compostable-bags',
+    description: 'Eco-friendly biodegradable and compostable bags manufactured to international standards for sustainable packaging solutions.',
+    image: biodegradableBagsImg,
     product_count: 0,
   },
 ]
