@@ -149,40 +149,9 @@ function CertificationsPage() {
         </Container>
       </section>
 
-      {/* ── Section 2: Certification Documents Coming Soon ─────────── */}
-      <section className="bg-surface/50 pt-3 pb-6 sm:pt-5 sm:pb-8 lg:pt-7 lg:pb-10 border-b border-gray-100/80">
+      {/* ── Section 2: Documentation Category Cards ─────────────────── */}
+      <section className="bg-surface/50 pt-5 pb-6 sm:pt-7 sm:pb-8 lg:pt-9 lg:pb-10 border-b border-gray-100/80">
         <Container>
-          {/* Tasteful Informational Status Treatment */}
-          <div className="bg-white rounded-2xl border border-slate-200/90 p-3.5 sm:p-6 mb-3.5 sm:mb-5 lg:mb-6 max-w-3xl shadow-2xs">
-            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 rounded-xl bg-navy-50 border border-navy-100/80 text-navy-700 flex items-center justify-center shrink-0 mt-0.5">
-                <svg className="w-5 h-5 text-gold-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2 mb-1.5 sm:mb-2">
-                  <span className="text-xs font-bold uppercase tracking-widest text-gold-600">
-                    DOCUMENTATION &amp; COMPLIANCE
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-navy-50 text-navy-800 text-[11px] font-semibold border border-navy-100/80">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold-500" aria-hidden="true" />
-                    <span>Documentation in Preparation</span>
-                  </span>
-                </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-navy-900 leading-snug mb-1.5 sm:mb-2">
-                  Certification Documents Coming Soon
-                </h2>
-                <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed mb-2 sm:mb-2.5">
-                  This section will display the company’s trade certifications, export licences, and quality compliance documents once they have been formally published.
-                </p>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  International buyers requiring documentation verification for specific shipments are welcome to reach out to our trade desk directly.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* 6 Documentation Category Cards: 1-col on mobile, 2-col on md, 3-col on lg */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
             {documentationCategories.map(({ number, title, badge, desc }) => (
